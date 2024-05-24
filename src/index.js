@@ -7,17 +7,7 @@ const app = express();
 const port = 3000;
 
 app.use(logRequestMiddleware);
-
-app.get("/", (req, res) => {
-  res.send("Get Method!");
-});
-
-app.post("/", (req, res) => {
-  res.json({
-    nama: "kunto",
-    email: "kuntowck@gmail.com",
-  });
-});
+app.use(express.json());
 
 app.use("/users", usersRoutes);
 
