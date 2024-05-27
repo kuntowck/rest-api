@@ -1,4 +1,4 @@
-require('dotenv').config()
+require("dotenv").config();
 
 const express = require("express");
 const usersRoutes = require("./routes/users");
@@ -10,6 +10,7 @@ const port = process.env.PORT || 4000;
 
 app.use(logRequestMiddleware);
 app.use(express.json());
+app.use("/assets", express.static("public/images"));
 
 app.use("/users", usersRoutes);
 
